@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.akropon.appchecker.plugin_ui;
 
 import java.beans.PropertyChangeListener;
@@ -13,12 +8,21 @@ import org.netbeans.spi.options.OptionsPanelController;
 import org.openide.util.HelpCtx;
 import org.openide.util.Lookup;
 
+/**
+ * Provides attaching settings panel to it's appointed place in options menu.
+ * 
+ * U can find options in Tools->Options->Miscellaneous->AppChecker
+ * 
+ * @author akropon
+ */
+@org.openide.util.NbBundle.Messages({
+		"AdvancedOption_DisplayName_AppChecker=AppChecker", 
+		"AdvancedOption_Keywords_AppChecker=appchecker"})
 @OptionsPanelController.SubRegistration(
 		displayName = "#AdvancedOption_DisplayName_AppChecker",
 		keywords = "#AdvancedOption_Keywords_AppChecker",
 		keywordsCategory = "Advanced/AppChecker"
 )
-@org.openide.util.NbBundle.Messages({"AdvancedOption_DisplayName_AppChecker=AppChecker", "AdvancedOption_Keywords_AppChecker=appchecker"})
 public final class AppCheckerOptionsPanelController extends OptionsPanelController {
 
 	private AppCheckerPanel panel;

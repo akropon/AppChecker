@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.akropon.appchecker.select_project_gui;
 
 import java.awt.event.ActionEvent;
@@ -12,14 +6,17 @@ import javax.swing.DefaultListModel;
 import org.netbeans.api.project.Project;
 
 /**
+ * Dialog, allowing select one project from several projects.
  *
  * @author akropon
  */
 public class ChooseProjectDialog extends javax.swing.JDialog {
 
+	/** constant for result, means OK */
 	public static final int RESULT_OK = 0;
+	/** constant for result, means CANCELED */
 	public static final int RESULT_CANCELED = 1;
-	
+	/** result after closing dialog */
 	private int result;
 	
     /** Creates new form ChooseProjectDialog */
@@ -164,11 +161,19 @@ public class ChooseProjectDialog extends javax.swing.JDialog {
 //        });
 //    }
 	
-	
+	/** result after closing dialog.
+	 * Can be {@ling RESULT_OK} or {@link RESULT_CANCELED}
+	 * 
+	 * @return result after closing dialog. 
+	 */
 	public int getResult() {
 		return result;
 	}
 	
+	/**
+	 * Returns index of selected project.
+	 * @return index
+	 */
 	public int getSelectedProjectIndex() {
 		return list.getSelectedIndex();
 	}

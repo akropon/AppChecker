@@ -1,32 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.akropon.appchecker.analyzing;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import javafx.scene.input.KeyCode;
-import javax.swing.SwingUtilities;
 import org.akropon.appchecker.plugin_ui.PluginSettings;
 import org.akropon.appchecker.progress_output_gui.ProgressOutputDialog;
 
 /**
+ * Class performing the static code analysis
  *
  * @author akropon
  */
 public class PluginBackend {
+	/** plugin settings */
 	private static PluginSettings settings;
+	/** list of file paths */
 	private static ArrayList<String> files;
+	/** list of found defects */
 	private static ArrayList<Defect> defects;
 	
+	/** flag. true - if analysis if performing */
 	private static boolean isPerforming = false;
+	/** flag. true - if analysis was canceled */
 	private static boolean isCancelled = false;
 	
+	/** link to dialog showing current progress and details-messages */
 	private static ProgressOutputDialog progressOutputDialog = null;
 	
+	/** 
+	 * perform static code analysis in corresponding files.
+	 * 
+	 * in the beginning sets {@link isCancelled} to false
+	 * 
+	 * @param files - file paths
+	 * @param settings - plugin settings
+	 * @return list of defects
+	 */
 	public static ArrayList<Defect> analyze(
 			ArrayList<String> files, 
 			PluginSettings settings) {
@@ -39,9 +48,9 @@ public class PluginBackend {
 		
 		// Interaction with the dialog of class ProgressOutputDialog
 		setProgress(0);
-		sendMessage("settings.booleanValue1"+settings.getBooleanValue1());
-		sendMessage("settings.booleanValue2"+settings.getBooleanValue2());
-		sendMessage("settings.stringValue"+settings.getStringValue());
+		sendMessage("settings.booleanValue1 = "+settings.getBooleanValue1());
+		sendMessage("settings.booleanValue2 = "+settings.getBooleanValue2());
+		sendMessage("settings.stringValue = "+settings.getStringValue());
 		sendMessage("Analysis began.");
 		
 		// Checking for being canceled
@@ -82,7 +91,6 @@ public class PluginBackend {
 		double progress_increment = 100 / files.size() / errors_per_file;
 		double current_progress = 0;
 		
-		
 		for (String file : files) {
 			sendMessage("Analysing of file "+file);
 			try {
@@ -110,14 +118,16 @@ public class PluginBackend {
 			}
 		}
 		// Emitaion of analysis END
+		
 		return true;
 	}
 	
-	
+	/** attach dialog showing progress to this class */
 	public static void setProgressOutputDialog(ProgressOutputDialog progressOutputDialog) {
 		PluginBackend.progressOutputDialog = progressOutputDialog;
 	}
 	
+	/** set flag {@linc isCancelled} to false if {@link isPerforming} is true */
 	public static boolean cancel() {
 		if (isPerforming) {
 			isCancelled = true;
@@ -126,10 +136,16 @@ public class PluginBackend {
 		return false;
 	}
 
+	/**
+	 * @return isPerforming
+	 */
 	public synchronized static boolean isPerforming() {
 		return isPerforming;
 	}
 
+	/**
+	 * @return isCancelled
+	 */
 	public synchronized static boolean isCancelled() {
 		return isCancelled;
 	}

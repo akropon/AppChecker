@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.akropon.appchecker;
 
 import org.akropon.appchecker.plugin_ui.AppCheckerPanel;
@@ -11,14 +6,11 @@ import org.akropon.appchecker.analyzing.PluginBackend;
 import org.akropon.appchecker.analyzing.Defect;
 import org.akropon.appchecker.defects_output_gui.DefectsTopComponent;
 import org.akropon.appchecker.select_project_gui.ChooseProjectDialog;
-import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Set;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import static org.akropon.appchecker.plugin_ui.AppCheckerPanel.*;
@@ -30,15 +22,20 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
 import org.openide.filesystems.FileObject;
-import org.openide.loaders.DataObject;
 import org.openide.util.Exceptions;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.NbPreferences;
 import org.openide.windows.Mode;
 import org.openide.windows.TopComponent;
 import org.openide.windows.WindowManager;
-import sun.rmi.runtime.Log;
 
+
+/**
+ * Class, that handles the clicking of the item in the menu that launches
+ * static code analysis with AppChecker
+ * 
+ * @author akropon
+ */
 @ActionID(
 		category = "Tools",
 		id = "org.akropon.appchecker.AppCheckerAction"

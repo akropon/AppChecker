@@ -7,26 +7,24 @@ package org.akropon.appchecker.defects_output_gui;
 
 import java.io.File;
 import java.util.ArrayList;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
-//import org.akropon.appchecker.Bundle;
 import org.akropon.appchecker.analyzing.Defect;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.cookies.LineCookie;
 import org.openide.filesystems.FileObject;
-import org.openide.filesystems.FileSystem;
 import org.openide.filesystems.FileUtil;
 import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectNotFoundException;
 import org.openide.text.Line;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
-import org.openide.nodes.Node;
 
 /**
- * Top component which displays something.
+ * Top component representing table with defects data.
+ * 
+ * Uses {@link TableModelForDefects} as {@link TableModel}
  */
 @ConvertAsProperties(
 		dtd = "-//org.akropon.appchecker//Defects//EN",
@@ -64,7 +62,6 @@ public final class DefectsTopComponent extends TopComponent {
 		table.addMouseListener(new java.awt.event.MouseAdapter() {
 			@Override
 			public void mouseClicked(java.awt.event.MouseEvent evt) {
-				
 				if (evt.getClickCount() != 2) return;
 				
 				int rowIndex = table.rowAtPoint(evt.getPoint());

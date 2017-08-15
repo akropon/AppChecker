@@ -1,12 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.akropon.appchecker.plugin_ui;
 
 import org.openide.util.NbPreferences;
 
+/**
+ * Represents settings panel in options.
+ * 
+ * U can find options in Tools->Options->Miscellaneous->AppChecker
+ * 
+ * @author akropon
+ */
 public final class AppCheckerPanel extends javax.swing.JPanel {
 
 	private final AppCheckerOptionsPanelController controller;

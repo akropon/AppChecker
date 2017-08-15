@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.akropon.appchecker.progress_output_gui;
 
 import java.awt.event.ActionEvent;
@@ -11,7 +6,9 @@ import javax.swing.SwingUtilities;
 import org.akropon.appchecker.analyzing.PluginBackend;
 import org.openide.util.Exceptions;
 
-/**
+/** Window, that shows progress status and details messages.
+ * 
+ * Allows to change it's condition by {@link  writeMessage} and {@link setProgress}
  *
  * @author akropon
  */
@@ -100,6 +97,11 @@ public class ProgressOutputDialog extends javax.swing.JDialog {
 		return true;
 	}
 	
+	/** 
+	 *  Write message to details messages field.
+	 * 
+	 *  Every message will be written from new line.
+	 */
 	public void writeMessage(final String msg) {
 		if (SwingUtilities.isEventDispatchThread()) {
 			writeMessage_async(msg);
@@ -135,7 +137,8 @@ public class ProgressOutputDialog extends javax.swing.JDialog {
         btn_cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(510, 190));
+        setMaximumSize(new java.awt.Dimension(510, 2147483647));
+        setMinimumSize(new java.awt.Dimension(510, 220));
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(ProgressOutputDialog.class, "ProgressOutputDialog.jLabel1.text")); // NOI18N
 
@@ -187,7 +190,7 @@ public class ProgressOutputDialog extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_finish)
