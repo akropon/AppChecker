@@ -5,8 +5,8 @@
         <group>
             <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/manifest.mf</file>
             <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/build.xml</file>
+            <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/src/org/akropon/appchecker/Bundle.properties</file>
             <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/src/org/akropon/appchecker/plugin_ui/PluginSettings.java</file>
-            <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/nbproject/build-impl.xml</file>
             <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/src/org/akropon/appchecker/analyzing/PluginBackend.java</file>
             <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/src/org/akropon/appchecker/progress_output_gui/ProgressOutputDialog.java</file>
             <file>file:/E:/Coding/Java/NetBeans_Plugins/AppChecker/src/org/akropon/appchecker/AppCheckerAction.java</file>

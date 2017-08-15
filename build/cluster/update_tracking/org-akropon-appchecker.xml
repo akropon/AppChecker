@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><module codename="org.akropon.appchecker">
-    <module_version install_time="1502810358173" last="true" origin="installer" specification_version="1.0">
-        <file crc="4206234297" name="config/Modules/org-akropon-appchecker.xml"/>
-        <file crc="3001727773" name="modules/org-akropon-appchecker.jar"/>
-    </module_version>
-</module>
